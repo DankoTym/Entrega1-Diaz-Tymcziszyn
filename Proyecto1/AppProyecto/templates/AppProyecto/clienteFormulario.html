@@ -1,0 +1,33 @@
+{% extends "AppProyecto/padre.html" %}
+{% load static %}
+
+
+<!-- Titulo-->
+{% block contenidoDeTitulo %}
+
+<h2>Formulario Carga de Clientes</h2>
+
+{% endblock%}
+
+
+<!-- ACCIÓN-->
+{% block contenidoQueCambia %}
+
+<form action="{% url 'clientesFormulario' %}" method="POST">{% csrf_token %}  <!-- Con esto se genera el token necesario para enviar los datos--> 
+    <h5>Si desea registrarse como cliente,<br> ingrese sus datos:</h5>
+    <table>
+        {{miFormulario.as_table}}
+    </table>
+    <input type="submit" value="Cargar Cliente">        <!--- Acá se genera el boton para enviar los datos -->
+</form>
+
+{% endblock %}
+<!--
+    <div class="col-lg-4">
+    <p class="lead mb-2">
+        <br>Si desea buscar algún cliente,
+        <a href="{% url 'busquedaClientes'%}">clic aquí</a>
+        .
+    </p>
+</div>
+-->
