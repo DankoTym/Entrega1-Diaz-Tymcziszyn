@@ -1,0 +1,21 @@
+{% extends "AppProyecto/padre.html" %}
+{% load static %}
+
+{% block contenidoDeTitulo %}
+<h3>Resultado de su Busqueda:</h3>
+{% endblock%}
+
+
+{% block contenidoQueCambia %}
+<h5>
+    Resultado de la busqueda del artículo número: {{articulo}}
+</h5>
+{% if productos%}          <!-- Si encuentra lo buscado entra acá-->
+<ul> 
+    {% for producto in productos%}     <!-- ciclo for para ir mostrando los cursos que cumplen mi condición-->
+    <h6>-Producto: {{producto.nombre}}.</h6> 
+    <br>                        <!-- Salto d linea-->
+    {% endfor%}
+</ul>
+{% endif %}
+{% endblock %}

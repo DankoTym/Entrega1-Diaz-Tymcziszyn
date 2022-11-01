@@ -1,0 +1,19 @@
+{% extends "AppProyecto/padre.html" %}
+
+{% load static %}
+<!--   -->
+{% block contenidoDeTitulo %}
+
+<h3>Buscador de Cleintes</h3>
+
+{% endblock%}
+<!--    -->
+{% block contenidoQueCambia %}
+
+<form action="{% url 'buscarClientes'%}" method="GET">
+    <h1>Ingrese el email del cliente al que desea buscar: </h1>
+    <input type="numer" name="email" placeholder="EMAIL" id="email">
+    <input type="submit" value="Buscar">      
+</form>
+
+{% endblock %}

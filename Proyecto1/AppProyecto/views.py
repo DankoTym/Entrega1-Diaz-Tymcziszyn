@@ -28,7 +28,7 @@ def productosFormulario(request):
         miFormulario = ProductosFormulario()
 
     return render(request, 'AppProyecto/productosFormulario.html', {'miFormulario':miFormulario})
-
+#---------------------------------
 def contactoFormulario(request):
     if request.method == 'POST':
         miFormulario = ContactoFormulario(request.POST)
@@ -45,7 +45,7 @@ def contactoFormulario(request):
         miFormulario = ContactoFormulario()
 
     return render(request, 'AppProyecto/contactoFormulario.html', {'miFormulario':miFormulario})
-
+#---------------------------------
 def clientesFormulario(request):
     if request.method == 'POST':
         miFormulario = ClienteFormulario(request.POST)
@@ -62,3 +62,30 @@ def clientesFormulario(request):
         miFormulario = ClienteFormulario()
 
     return render(request, 'AppProyecto/clienteFormulario.html', {'miFormulario':miFormulario})
+
+#------Busqueda de Datos----------
+def busquedaProductos(request):                                        
+
+    return render(request, "AppProyecto/busquedaProductos.html")
+
+def buscarProducto(request):                                                      
+    if request.GET['articulo']:
+        articulo =request.GET['articulo']               
+        productos = Producto.objects.filter(articulo=articulo)    
+        return render(request, "AppProyecto/resultadosProducto.html", {'productos':productos, 'articulo':articulo})
+    else:
+        respuesta = "No se ingreso ningún número de artículo" 
+        return HttpResponse(respuesta)  
+#---------------------------------
+def busquedaClientes(request):                                        
+
+    return render(request, "AppProyecto/busquedaClientes.html")
+
+def buscarClientes(request):                                                      
+    if request.GET['email']:
+        email =request.GET['email']               
+        clientes = Cliente.objects.filter(email=email)    
+        return render(request, "AppProyecto/resultadosClientes.html", {'clientes':clientes, 'emial':email})
+    else:
+        respuesta = "No se ingreso ningún email" 
+        return HttpResponse(respuesta)

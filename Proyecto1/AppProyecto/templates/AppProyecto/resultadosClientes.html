@@ -1,0 +1,23 @@
+{% extends "AppProyecto/padre.html" %}
+{% load static %}
+
+{% block contenidoDeTitulo %}
+<h3>Resultado de su Busqueda:</h3>
+{% endblock%}
+
+
+{% block contenidoQueCambia %}
+<h5>
+    Resultado del cliente con email: {{emial}}
+</h5>
+
+{% if clientes%}          <!-- Si encuentra lo buscado entra acá-->
+<ul> 
+    {% for cliente in clientes%}     <!-- ciclo for para ir mostrando los cursos que cumplen mi condición-->
+    <h6>-Cliente: {{cliente.nombre}}, {{cliente.apellido}}.</h6>   
+  
+    {% endfor%}
+</ul>
+{% endif %}
+
+{% endblock %}
