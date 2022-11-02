@@ -9,4 +9,5 @@ contraseña del mismo:
 
 Usuario: administrador Contraseña: 31415
 
-Si bien, se dejaron cargados algunos elementos para poder verlos en las busquedas, recomendamos cargar más elementos a cada models para visualizarlos.
+Si bien, se dejaron cargados algunos elementos para poder verlos en las busquedas, recomendamos cargar más elementos a cada models para 
+visualizar el funcionamiento de la app.
